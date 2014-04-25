@@ -1,0 +1,16 @@
+{
+    "name": "Perm HSE WiFi Autologin",
+    "version": "1.0",
+    "manifest_version": 2,
+
+    "permissions": [
+        "tabs", "https://perm-wlc-01.hse.ru/fs/customwebauth/*"
+    ],
+
+    "content_scripts": [{
+        "matches": ["https://perm-wlc-01.hse.ru/fs/customwebauth/*"],
+        "js": ["scripts/contentscpript.js"]
+    }],
+
+    "web_accessible_resources": ["scripts/script.js"]
+}

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rm HseAutoLogin.zip -f
+zip HseAutoLogin.zip manifest.json scripts -r
