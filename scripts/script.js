@@ -13,12 +13,23 @@ function getPasswordInput(form) {
     return divPassword.getElementsByTagName('input')[0];
 }
 
-var form = getRussianLoginForm(document);
+function is405Error() {
+    pre = document.getElementsByTagName('pre')[0]
+    return pre != null && pre.textContent.match('405') != null
+    return false
+}
 
-var username = getUsernameInput(form)
-username.value = 'hseguest'
+if(is405Error()) {
+    history.go()
+}
+else {
+    var form = getRussianLoginForm(document);
 
-var password = getPasswordInput(form)
-password.value = 'hsepassword'
+    var username = getUsernameInput(form)
+    username.value = 'hseguest'
 
-submitAction()
+    var password = getPasswordInput(form)
+    password.value = 'hsepassword'
+
+    submitAction()
+}
