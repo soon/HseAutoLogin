@@ -8,9 +8,17 @@
     ],
 
     "content_scripts": [{
+        "run_at": "document_end",
         "matches": ["https://perm-wlc-01.hse.ru/fs/customwebauth/*"],
         "js": ["scripts/contentscript.js"]
+    }, {
+        "run_at": "document_start",
+        "matches": ["https://perm-wlc-01.hse.ru/fs/customwebauth/*"],
+        "js": ["scripts/inject_disable_alert.js"]
     }],
 
-    "web_accessible_resources": ["scripts/script.js"]
+    "web_accessible_resources": [
+        "scripts/script.js",
+        "scripts/disable_alert.js"
+    ]
 }
