@@ -31,5 +31,5 @@ else {
     var password = getPasswordInput(form)
     password.value = 'hsepassword'
 
-    submitAction()
+    setTimeout(submitAction, 500);
 }
