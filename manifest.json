@@ -9,7 +9,7 @@
 
     "content_scripts": [{
         "matches": ["https://perm-wlc-01.hse.ru/fs/customwebauth/*"],
-        "js": ["scripts/contentscpript.js"]
+        "js": ["scripts/contentscript.js"]
     }],
 
     "web_accessible_resources": ["scripts/script.js"]
