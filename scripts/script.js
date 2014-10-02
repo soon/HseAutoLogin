@@ -19,17 +19,25 @@ function is405Error() {
     return false
 }
 
-if(is405Error()) {
-    history.go()
+function login() {
+    if(is405Error()) {
+        history.go()
+    }
+    else {
+        var form = getRussianLoginForm(document);
+
+        var username = getUsernameInput(form)
+        username.value = 'hseguest'
+
+        var password = getPasswordInput(form)
+        password.value = 'hsepassword'
+
+        setTimeout(submitAction, 500);
+    }
 }
-else {
-    var form = getRussianLoginForm(document);
 
-    var username = getUsernameInput(form)
-    username.value = 'hseguest'
-
-    var password = getPasswordInput(form)
-    password.value = 'hsepassword'
-
-    setTimeout(submitAction, 500);
+function main() {
+    setTimeout(login, 500);
 }
+
+window.addEventListener ("load", main, false);
